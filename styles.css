@@ -9,7 +9,7 @@ html {
 }
 
 html, body {
-    height: 100%; /* Ensure the body takes full height of the viewport */
+    height: 100%;
     margin: 0;
 }
 
@@ -20,15 +20,15 @@ body {
 
 /* Navigation Bar */
 nav {
-    background-color: rgba(51, 51, 51, 0.7); /* Translucent background */
+    background-color: rgba(51, 51, 51, 0.7);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000; /* Ensure the nav is always above the header */
+    z-index: 1000;
     padding: 10px;
     display: flex;
-    justify-content: flex-end; /* Aligns navbar items to the right */
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -51,7 +51,7 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: color 0.3s ease;
 }
 
@@ -59,7 +59,6 @@ nav ul li a:hover {
     color: #3a598f;
 }
 
-/* Hamburger Icon (hidden by default) */
 .menu-icon {
     display: none;
     font-size: 2em;
@@ -69,18 +68,18 @@ nav ul li a:hover {
 /* Non-collapsed (default) menu for larger screens */
 @media (min-width: 769px) {
     nav ul {
-        display: flex; /* Ensure the menu is visible for large screens */
+        display: flex;
     }
 
     .nav-links.active {
-        display: flex; /* Force the nav to display when it is in active state */
+        display: flex;
     }
 }
 
 /* Collapsed menu for smaller screens (768px and below) */
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* Hide the menu by default in mobile view */
+        display: none;
         flex-direction: column;
         width: 100%;
         background-color: rgba(51, 51, 51, 0.9);
@@ -92,7 +91,6 @@ nav ul li a:hover {
         padding: 10px 0;
     }
 
-    /* Show the menu when the "active" class is added */
     nav ul.active {
         display: block;
     }
@@ -106,42 +104,38 @@ nav ul li a:hover {
         margin-right: 20px;
         cursor: pointer;
     }
-
-    .nav-links {
-        display: none; /* Hide by default, shown by JavaScript */
-    }
 }
 
-/* Add some padding at the top to prevent content being hidden by the fixed navbar */
 header, section {
     padding-top: 60px;
 }
 
-/* Hero Section */
 header.hero {
     background-image: url("./header-photo.jpeg");
-    background-size: cover; /* Ensures the image covers the entire area */
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    height: 100vh; /* Full viewport height */
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    position: relative; /* Keep hero section positioned properly */
-    z-index: 1; /* Ensure it's not covered by other elements */
+    position: relative;
+    z-index: 1;
 }
 
 .header-content {
-    background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background to improve text readability */
+    background: rgba(0, 0, 0, 0.5);
     padding: 32px;
     border-radius: 8px;
-    z-index: 2; /* Ensures the content stays above the image */
+    width: 80%;
+    height: 40vh;
+    margin: 40px;
+    z-index: 2;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-top: 4px;
     margin-bottom: 4px;
 }
@@ -151,10 +145,9 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Add a media query for mobile devices */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.6em; /* Smaller font size for mobile */
+        font-size: 1.6em;
     }
 }
 
@@ -184,18 +177,120 @@ section.about {
     text-align: center;
 }
 
-section.about p {
-    width: 50%;
-    min-width: 300px;
+/* Flexbox container to position the image and text side by side */
+.about-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
     margin: 0 auto;
+    text-align: left;
+}
+
+.profile-picture {
+    width: 400px;
+    height: 280px;
+    margin-right: 48px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    flex: 1;
+    margin-top: 20px;
+}
+
+.about-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-text p {
     font-size: 1.2em;
 }
 
-/* Lessons Section */
-section.lessons {
+/* Why Section */
+section.why {
     padding: 50px;
     text-align: center;
-    min-height: 85vh; 
+}
+
+/* Flexbox container to position the image and text side by side */
+.why-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.why-picture {
+    width: 400px;
+    height: 280px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.why-text {
+    flex: 1;
+    margin-top: 20px;
+    margin-right: 48px;
+}
+
+.why-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.why-text p {
+    font-size: 1.2em;
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+    .about-container, .why-container {
+        flex-direction: column; /* Stack the image and text */
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-picture, .why-picture {
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .why-picture {
+        order: -1; /* Ensure the image comes before the text in mobile view */
+    }
+
+    .why-text {
+        margin-right: 0;
+    }
+}
+
+section.lessons {
+    margin-top: 50px;
+    padding: 50px;
+    text-align: center;
+    min-height: 80vh;
+}
+
+section.lessons p {
+    font-size: 0.8em;
+}
+
+section.reviews {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Flexbox container to position the image and text side by side */
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 h2 {
