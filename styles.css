@@ -4,31 +4,48 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes full height of the viewport */
+    margin: 0;
+}
+
 body {
     font-family: 'Raleway', sans-serif;
     color: #333;
 }
 
+/* Navigation Bar */
 nav {
     background-color: rgba(51, 51, 51, 0.7); /* Translucent background */
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: flex-end; /* Aligns nav content to the right */
+    z-index: 1000; /* Ensure the nav is always above the header */
     padding: 10px;
+    display: flex;
+    justify-content: flex-end; /* Aligns navbar items to the right */
+    align-items: center;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    margin-right: 30px; /* Adds spacing from the right edge */
+    margin-right: 30px;
 }
 
 nav ul li {
-    margin: 0 30px; /* Increased spacing between the links */
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -42,6 +59,59 @@ nav ul li a:hover {
     color: #3a598f;
 }
 
+/* Hamburger Icon (hidden by default) */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    color: white;
+}
+
+/* Non-collapsed (default) menu for larger screens */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex; /* Ensure the menu is visible for large screens */
+    }
+
+    .nav-links.active {
+        display: flex; /* Force the nav to display when it is in active state */
+    }
+}
+
+/* Collapsed menu for smaller screens (768px and below) */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the menu by default in mobile view */
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(51, 51, 51, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        text-align: right;
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    /* Show the menu when the "active" class is added */
+    nav ul.active {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 10px 20px;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none; /* Hide by default, shown by JavaScript */
+    }
+}
+
 /* Add some padding at the top to prevent content being hidden by the fixed navbar */
 header, section {
     padding-top: 60px;
@@ -50,20 +120,24 @@ header, section {
 /* Hero Section */
 header.hero {
     background-image: url("./header-photo.jpeg");
-    background-size: cover;
+    background-size: cover; /* Ensures the image covers the entire area */
     background-position: center;
-    height: 100vh;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh; /* Full viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    position: relative; /* Keep hero section positioned properly */
+    z-index: 1; /* Ensure it's not covered by other elements */
 }
 
 .header-content {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background to improve text readability */
     padding: 20px;
     border-radius: 8px;
+    z-index: 2; /* Ensures the content stays above the image */
 }
 
 h1 {
@@ -104,15 +178,11 @@ section.about p {
     font-size: 1.2em;
 }
 
-section.price {
-    padding: 50px;
-    text-align: center;
-}
-
 /* Lessons Section */
 section.lessons {
     padding: 50px;
     text-align: center;
+    min-height: 85vh; 
 }
 
 h2 {
@@ -135,5 +205,29 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+footer .find-me {
+    margin-top: 10px;
+}
+
+footer .find-me p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+footer .find-me .social-link {
+    color: white;
+    margin: 0 10px;
+    font-size: 2em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .find-me .social-link:hover {
+    color: #ff4500;
 }

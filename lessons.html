@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bryan's Surf Lessons - Lessons</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="lessons.html">Lessons</a></li>
-            <li><a href="https://wa.me/6285261962860">Book Now</a></li>
-        </ul>
+        <div class="navbar-container">
+            <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i> <!-- Hamburger icon -->
+            </a>
+            <ul id="nav-links" class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="lessons.html">Lessons</a></li>
+                <li><a href="https://wa.me/6285261962860">Book Now</a></li>
+            </ul>
+        </div>
     </nav>
 
     <section id="lessons" class="lessons">
@@ -28,6 +34,22 @@
 
     <footer>
         <p>&copy; 2024 Bryan's Surf Lessons. All Rights Reserved.</p>
+        <div class="find-me">
+            <p>Find Me On:</p>
+            <a href="https://www.instagram.com/theycallmesbryan" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/6285261962860" target="_blank" class="social-link">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
