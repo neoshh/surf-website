@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+}
+
+nav {
+    background-color: rgba(51, 51, 51, 0.7); /* Translucent background */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end; /* Aligns nav content to the right */
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 30px; /* Adds spacing from the right edge */
+}
+
+nav ul li {
+    margin: 0 30px; /* Increased spacing between the links */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3a598f;
+}
+
+/* Add some padding at the top to prevent content being hidden by the fixed navbar */
+header, section {
+    padding-top: 60px;
+}
+
+/* Hero Section */
+header.hero {
+    background-image: url("./header-photo.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.header-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.book-btn {
+    display: inline-block;
+    background-color: #2596be;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #3a598f;
+}
+
+/* About Section */
+section.about {
+    padding: 50px;
+    text-align: center;
+}
+
+section.about p {
+    width: 50%;
+    min-width: 300px;
+    margin: 0 auto;
+    font-size: 1.2em;
+}
+
+section.price {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Lessons Section */
+section.lessons {
+    padding: 50px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
