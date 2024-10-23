@@ -135,20 +135,26 @@ header.hero {
 
 .header-content {
     background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background to improve text readability */
-    padding: 20px;
+    padding: 32px;
     border-radius: 8px;
     z-index: 2; /* Ensures the content stays above the image */
 }
 
 h1 {
     font-size: 2em;
-    margin-bottom: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#header-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* Add a media query for mobile devices */
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.5em; /* Smaller font size for mobile */
+        font-size: 1.6em; /* Smaller font size for mobile */
     }
 }
 
