@@ -32,10 +32,24 @@ nav {
     align-items: center;
 }
 
+/* Logo (Emoji) Styling */
+.logo {
+    font-size: 2em; /* Adjust size to your preference */
+    margin-right: auto; /* Pushes the logo to the left */
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Set the color of the emoji */
+    padding-left: 20px; /* Add some padding on the left */
+}
+
+.logo:hover {
+    color: #3a598f; /* Optional: Change color on hover */
+}
+
 .navbar-container {
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    align-items: center;
 }
 
 nav ul {
@@ -147,7 +161,7 @@ h1 {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 1.6em;
+        font-size: 2em;
     }
 }
 
@@ -165,6 +179,7 @@ p {
     text-decoration: none;
     font-size: 1.2em;
     transition: background-color 0.3s ease;
+    text-align: center;
 }
 
 .book-btn:hover {
@@ -245,6 +260,11 @@ section.why {
     font-size: 1.2em;
 }
 
+.reviews-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
 /* Media Queries for Mobile View */
 @media (max-width: 768px) {
     .about-container, .why-container {
@@ -319,13 +339,12 @@ section.lessons p {
     font-size: 1em;
 }
 
-.lesson-card .price {
+/* .lesson-card .price {
     font-weight: bold;
     color: #2596be;
     text-align: right;
     margin-top: 20px;
-    /* width: 200px; */
-}
+} */
 
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
@@ -343,9 +362,9 @@ section.lessons p {
         text-align: center; /* Center content on mobile */
     }
 
-    .lesson-card .price {
-        text-align: center; /* Center the price on mobile */
-    }
+    /* .lesson-card .price {
+        text-align: center;
+    } */
 }
 
 section.reviews {
