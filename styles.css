@@ -296,14 +296,14 @@ section.lessons {
 }
 
 section.lessons p {
-    font-size: 1.2em;
+    font-size: 1.0em;
 }
 
 .lessons-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; /* Allow cards to wrap to the next line */
-    gap: 20px; /* Add space between the cards */
+    gap: 100px; /* Add space between the cards */
     margin-top: 30px;
     margin-bottom: 30px;
 }
