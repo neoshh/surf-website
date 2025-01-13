@@ -121,11 +121,11 @@ nav ul li a:hover {
 }
 
 header, section {
-    padding-top: 60px;
+    padding-top: 240px;
 }
 
 header.hero {
-    background-image: url("./header-photo.jpeg");
+    background-image: url("./surf-image.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
